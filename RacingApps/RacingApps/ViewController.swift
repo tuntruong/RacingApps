@@ -33,14 +33,16 @@ class ViewController: UIViewController {
     func firstData(){
         // get with heght
         w = self.playGroundView.frame.width
-        h = self.playGroundView.frame.height
+        h = self.view.frame.height
         gameOverView.isHidden = true
         self.playGroundView.backgroundColor = UIColor.init(patternImage: UIImage(named: "road.png")!)
         
-        //Set first location 
-        car1.frame = CGRect(x: car1.frame.origin.x, y: car1.frame.origin.y - 600, width: car1.frame.size.width, height: car1.frame.size.height)
-        car2.frame = CGRect(x: car2.frame.origin.x, y: car2.frame.origin.y - 600, width: car2.frame.size.width, height: car2.frame.size.height)
-        car3.frame = CGRect(x: car3.frame.origin.x, y: car3.frame.origin.y - 600, width: car3.frame.size.width, height: car3.frame.size.height)
+        //Set first location
+        player.frame = CGRect(x: view.frame.size.width/2 - 50, y: view.frame.size.height - 90, width: 40, height: 90)
+        car1.frame = CGRect(x: car1.frame.origin.x, y: car1.frame.origin.y - 600, width: player.frame.size.width, height: player.frame.size.height)
+        car2.frame = CGRect(x: car2.frame.origin.x, y: car2.frame.origin.y - 600, width: player.frame.size.width, height: player.frame.size.height)
+        car3.frame = CGRect(x: car3.frame.origin.x, y: car3.frame.origin.y - 600, width: player.frame.size.width, height: player.frame.size.height)
+        
         
     }
     
@@ -91,12 +93,12 @@ class ViewController: UIViewController {
         
         //Check and update Point to view
         markLabel.text = "\(mark)"
-        guard let bestMark = UserDefaults.standard.object(forKey: "bestMark") as? Int else {return}
+        let bestMark = (UserDefaults.standard.object(forKey: "bestMark") as? Int) ?? 0
         if bestMark < mark{
             UserDefaults.standard.set(mark, forKey: "bestMark")
         }
-        guard let best = UserDefaults.standard.object(forKey: "bestMark") as? Int else {return}
-        bestPointLabel.text = "\(best)"
+        let best = UserDefaults.standard.object(forKey: "bestMark") as? Int
+        bestPointLabel.text = "\(best ?? 0)"
         //MARK: Check car accident
         if car1.frame.intersects(player.frame) || car2.frame.intersects(player.frame) || car3.frame.intersects(player.frame) {
             time?.invalidate()
