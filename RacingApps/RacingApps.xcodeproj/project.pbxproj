@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67314FFF2004AD5100C52A7D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67E1109820030601003F4828 /* Info.plist */; };
+		673150002004AD5C00C52A7D /* Jelly Crazies.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67314FFE2004AD0200C52A7D /* Jelly Crazies.ttf */; };
 		67E1108D20030601003F4828 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E1108C20030601003F4828 /* AppDelegate.swift */; };
 		67E1108F20030601003F4828 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E1108E20030601003F4828 /* ViewController.swift */; };
 		67E1109220030601003F4828 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67E1109020030601003F4828 /* Main.storyboard */; };
@@ -133,7 +135,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67314FFF2004AD5100C52A7D /* Info.plist in Resources */,
 				67E1109720030601003F4828 /* LaunchScreen.storyboard in Resources */,
+				673150002004AD5C00C52A7D /* Jelly Crazies.ttf in Resources */,
 				67E1109420030601003F4828 /* Assets.xcassets in Resources */,
 				67E1109220030601003F4828 /* Main.storyboard in Resources */,
 			);
